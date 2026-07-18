@@ -1,0 +1,4 @@
+# Copy this file to terraform.tfvars (which is gitignored) and fill in
+# a real value. NEVER commit terraform.tfvars itself.
+
+db_password = "choose-a-strong-password-here"

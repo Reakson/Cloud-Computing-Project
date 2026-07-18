@@ -21,3 +21,15 @@ output "ec2_sg_id" {
 output "rds_sg_id" {
   value = module.security_groups.rds_sg_id
 }
+
+output "db_endpoint" {
+  value = module.rds.db_endpoint
+}
+
+output "db_address" {
+  value = module.rds.db_address
+}
+
+output "db_port" {
+  value = module.rds.db_port
+}
