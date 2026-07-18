@@ -1,0 +1,26 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Editor/OS junk
+.DS_Store
+.vscode/
+*.swp
+
+# Node (for the app code folders)
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
