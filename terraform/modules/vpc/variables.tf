@@ -13,7 +13,7 @@ variable "vpc_cidr" {
 variable "azs" {
   description = "Availability zones to spread subnets across"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["ap-southeast-1a", "ap-southeast-1b"]
 }
 
 variable "public_subnet_cidrs" {
