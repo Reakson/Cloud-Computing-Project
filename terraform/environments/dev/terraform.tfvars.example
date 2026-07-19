@@ -1,4 +1,6 @@
-# Copy this file to terraform.tfvars (which is gitignored) and fill in
-# a real value. NEVER commit terraform.tfvars itself.
+# Copy this file to terraform.tfvars and fill in real values.
+# terraform.tfvars is gitignored — NEVER commit it.
 
-db_password = "choose-a-strong-password-here"
+db_password     = "choose-a-strong-password-here"
+jwt_secret      = "choose-a-long-random-string-here"
+github_repo_url = "https://github.com/your-username/keypkey-cloud-project.git"

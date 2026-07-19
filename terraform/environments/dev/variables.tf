@@ -9,7 +9,18 @@ variable "project_name" {
 }
 
 variable "db_password" {
-  description = "Master password for the RDS instance. Set this in a terraform.tfvars file (gitignored) or via TF_VAR_db_password env var — never commit a real value here."
+  description = "Master password for the RDS instance. Set in terraform.tfvars (gitignored)."
   type        = string
   sensitive   = true
+}
+
+variable "jwt_secret" {
+  description = "Secret key for signing JWT tokens. Set in terraform.tfvars (gitignored)."
+  type        = string
+  sensitive   = true
+}
+
+variable "github_repo_url" {
+  description = "HTTPS URL of your GitHub repo, e.g. https://github.com/your-username/keypkey-cloud-project.git"
+  type        = string
 }

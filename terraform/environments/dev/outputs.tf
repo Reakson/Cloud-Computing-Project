@@ -33,3 +33,12 @@ output "db_address" {
 output "db_port" {
   value = module.rds.db_port
 }
+
+output "alb_dns_name" {
+  description = "Your app's public URL — open this in a browser after apply"
+  value       = module.alb.alb_dns_name
+}
+
+output "asg_name" {
+  value = module.compute.asg_name
+}
