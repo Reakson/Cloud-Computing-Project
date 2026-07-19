@@ -25,15 +25,6 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-# Amazon Linux 2023 AMI for ap-southeast-1 (Singapore)
-# If this ever gives an error, look up the latest ami-id in the console:
-# EC2 -> Launch Instance -> search "Amazon Linux 2023"
-variable "ami_id" {
-  description = "Amazon Linux 2023 AMI for ap-southeast-1"
-  type        = string
-  default     = "ami-0df7a207adb9748c7"
-}
-
 variable "asg_min_size" {
   type    = number
   default = 2
@@ -49,10 +40,8 @@ variable "asg_desired_capacity" {
   default = 2
 }
 
-# App environment variables — passed into the EC2 startup script
 variable "db_host" {
-  description = "RDS hostname (from rds module output: db_address)"
-  type        = string
+  type = string
 }
 
 variable "db_name" {
@@ -71,18 +60,21 @@ variable "db_password" {
 }
 
 variable "jwt_secret" {
-  description = "Secret key used to sign JWT tokens. Set this in terraform.tfvars (gitignored)."
+  type      = string
+  sensitive = true
+}
+
+variable "vault_secret" {
+  description = "Secret key used for AES-256 vault encryption. Set in terraform.tfvars (gitignored)."
   type        = string
   sensitive   = true
 }
 
 variable "github_repo_url" {
-  description = "HTTPS URL of your GitHub repo, e.g. https://github.com/your-username/keypkey-cloud-project.git"
-  type        = string
+  type = string
 }
 
 variable "frontend_url" {
-  description = "URL of the frontend (S3 static site or CloudFront) — used for CORS. Set after Stage 4."
-  type        = string
-  default     = "*"
+  type    = string
+  default = "*"
 }
