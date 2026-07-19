@@ -20,6 +20,12 @@ variable "jwt_secret" {
   sensitive   = true
 }
 
+variable "vault_secret" {
+  description = "Secret key for vault encryption. Set in terraform.tfvars (gitignored)."
+  type        = string
+  sensitive   = true
+}
+
 variable "github_repo_url" {
   description = "HTTPS URL of your GitHub repo, e.g. https://github.com/your-username/keypkey-cloud-project.git"
   type        = string

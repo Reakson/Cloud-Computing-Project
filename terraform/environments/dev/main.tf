@@ -49,6 +49,7 @@ module "compute" {
   db_user     = "keypkey_admin"
   db_password = var.db_password
   jwt_secret  = var.jwt_secret
+  vault_secret  = var.vault_secret
 
   github_repo_url = var.github_repo_url
 }
