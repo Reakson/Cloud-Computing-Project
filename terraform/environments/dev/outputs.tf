@@ -42,3 +42,13 @@ output "alb_dns_name" {
 output "asg_name" {
   value = module.compute.asg_name
 }
+
+output "frontend_url" {
+  description = "Open this in a browser to see the deployed frontend"
+  value       = module.s3_frontend.frontend_url
+}
+
+output "bucket_name" {
+  description = "Upload the built frontend here — aws s3 sync dist/ s3://<this>"
+  value       = module.s3_frontend.bucket_name
+}

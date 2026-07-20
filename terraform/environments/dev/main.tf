@@ -35,6 +35,13 @@ module "alb" {
   alb_sg_id         = module.security_groups.alb_sg_id
 }
 
+module "s3_frontend" {
+  source = "../../modules/s3-frontend"
+
+  project_name = var.project_name
+  environment  = "dev"
+}
+
 module "compute" {
   source = "../../modules/compute"
 
@@ -52,4 +59,6 @@ module "compute" {
   vault_secret  = var.vault_secret
 
   github_repo_url = var.github_repo_url
+
+  frontend_url = module.s3_frontend.frontend_url
 }
