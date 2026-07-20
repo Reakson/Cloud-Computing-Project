@@ -14,13 +14,13 @@ terraform {
   # so the whole team shares one state file instead of everyone's laptop
   # having its own.
   #
-  # backend "s3" {
-  #   bucket         = "keypkey-terraform-state"   # must already exist
-  #   key            = "dev/terraform.tfstate"
-  #   region         = "us-east-1"
-  #   dynamodb_table = "keypkey-terraform-locks"     # must already exist
-  #   encrypt        = true
-  # }
+  backend "s3" {
+  bucket         = "keypkey-terraform-state"
+  key            = "dev/terraform.tfstate"
+  region         = "ap-southeast-1"
+  dynamodb_table = "keypkey-terraform-locks"
+  encrypt        = true
+}
 }
 
 provider "aws" {
