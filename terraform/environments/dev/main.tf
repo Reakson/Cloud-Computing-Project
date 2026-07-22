@@ -62,3 +62,23 @@ module "compute" {
 
   frontend_url = module.s3_frontend.frontend_url
 }
+
+#new tra add all, cloudwatch stage 6
+module "cloudwatch" {
+  source = "../../modules/cloudwatch"
+
+  project_name = var.project_name
+  aws_region   = var.aws_region
+
+  asg_name                = module.compute.asg_name
+  scale_out_policy_arn    = module.compute.scale_out_policy_arn
+  scale_in_policy_arn     = module.compute.scale_in_policy_arn
+  alb_arn_suffix          = module.alb.alb_arn_suffix
+  target_group_arn_suffix = module.alb.target_group_arn_suffix
+
+  cpu_high_threshold = var.cpu_high_threshold
+  cpu_low_threshold  = var.cpu_low_threshold
+  alarm_email        = var.alarm_email
+}
+
+

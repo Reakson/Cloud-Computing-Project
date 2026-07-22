@@ -4,3 +4,7 @@
 db_password     = "choose-a-strong-password-here"
 jwt_secret      = "choose-a-long-random-string-here"
 github_repo_url = "https://github.com/your-username/keypkey-cloud-project.git"
+
+
+# Optional — Stage 6. Leave blank to skip email alerts.
+alarm_email = ""

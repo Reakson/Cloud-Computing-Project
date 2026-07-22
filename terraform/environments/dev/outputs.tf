@@ -52,3 +52,12 @@ output "bucket_name" {
   description = "Upload the built frontend here — aws s3 sync dist/ s3://<this>"
   value       = module.s3_frontend.bucket_name
 }
+
+#new tra add all, cloudwatch stage 6
+output "cloudwatch_dashboard_url" {
+  value = module.cloudwatch.dashboard_url
+}
+
+output "sns_alarm_topic_arn" {
+  value = module.cloudwatch.sns_topic_arn
+}
